@@ -15,7 +15,7 @@
    limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -114,7 +114,7 @@
     <basepom.test.fork-count>1</basepom.test.fork-count>
     <basepom.failsafe.fork-count>1</basepom.failsafe.fork-count>
     <basepom.failsafe.reuse-vm>true</basepom.failsafe.reuse-vm>
-     <!-- takes a really long time, disable for travis -->
+    <!-- takes a really long time, disable for travis -->
     <basepom.check.skip-dependency-versions-check>false</basepom.check.skip-dependency-versions-check>
 
     <!-- Project Dependencies -->
@@ -130,9 +130,9 @@
     <version.org.keycloak>4.8.3.Final</version.org.keycloak>
     <olingo.version>4.7.1</olingo.version>
     <narayana.version>2.1.0</narayana.version> <!-- me.snowdrop version, not narayana -->
-    
+
     <google-sheets.version>v4-rev612-1.25.0</google-sheets.version>
-    <version.mustache>0.9.6</version.mustache>    
+    <version.mustache>0.9.6</version.mustache>
     <version.jackson-core>2.11.3</version.jackson-core>
     <version.jackson-databind>2.11.3</version.jackson-databind>
     <version.org.mongodb>3.9.1</version.org.mongodb>
@@ -160,7 +160,7 @@
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
           <version>${spring-boot.version}</version>
-        </plugin>  
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -198,41 +198,41 @@
           </ignoredResourcePatterns>
           <ignoredDependencies>
             <ignoredDependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-all</artifactId>
+              <groupId>io.netty</groupId>
+              <artifactId>netty-all</artifactId>
             </ignoredDependency>
             <dependency>
               <artifactId>jaxen</artifactId>
               <groupId>jaxen</groupId>
-            </dependency> 
+            </dependency>
           </ignoredDependencies>
         </configuration>
       </plugin>
-        <plugin>
-          <groupId>com.mycila</groupId>
-          <artifactId>license-maven-plugin</artifactId>
-          <configuration>
-            <excludes>
-              <exclude>**/*.mustache</exclude>
-              <exclude>**/*.ddl</exclude>
-              <exclude>**/*.sql</exclude>
-              <exclude>**/*.yml</exclude>
-              <exclude>**/*.yaml</exclude>
-              <exclude>**/*.txt</exclude>
-              <exclude>**/src/test/resources/**</exclude>
-            </excludes>
-          </configuration>
-        </plugin>      
+      <plugin>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>**/*.mustache</exclude>
+            <exclude>**/*.ddl</exclude>
+            <exclude>**/*.sql</exclude>
+            <exclude>**/*.yml</exclude>
+            <exclude>**/*.yaml</exclude>
+            <exclude>**/*.txt</exclude>
+            <exclude>**/src/test/resources/**</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
   <dependencyManagement>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
@@ -240,12 +240,12 @@
         <type>pom</type>
         <scope>import</scope>
         <exclusions>
-            <exclusion>
-                <groupId>org.infinispan</groupId>
-                <artifactId>*</artifactId>
-            </exclusion>
+          <exclusion>
+            <groupId>org.infinispan</groupId>
+            <artifactId>*</artifactId>
+          </exclusion>
         </exclusions>
-      </dependency>      
+      </dependency>
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
@@ -262,21 +262,21 @@
         </exclusions>
       </dependency>
       <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-undertow</artifactId>
-          <version>${spring-boot.version}</version>
-          <exclusions>
-            <exclusion>
-              <groupId>org.jboss.spec.javax.annotation</groupId>
-              <artifactId>jboss-annotations-api_1.3_spec</artifactId>            
-            </exclusion>
-          </exclusions>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-undertow</artifactId>
+        <version>${spring-boot.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.jboss.spec.javax.annotation</groupId>
+            <artifactId>jboss-annotations-api_1.3_spec</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
       <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-context</artifactId>
-          <version>${spring.version}</version>
-      </dependency>      
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -288,7 +288,7 @@
         <version>${narayana.version}</version>
         <exclusions>
           <exclusion>
-                <!-- Other JARS bring in this dependency -->
+            <!-- Other JARS bring in this dependency -->
             <groupId>org.jboss.spec.javax.transaction</groupId>
             <artifactId>jboss-transaction-api_1.2_spec</artifactId>
           </exclusion>
@@ -323,14 +323,14 @@
         <artifactId>teiid-runtime</artifactId>
         <version>${teiid.version}</version>
         <exclusions>
-            <exclusion>
-                <groupId>org.jboss.logging</groupId>
-                <artifactId>jboss-logging</artifactId>
-            </exclusion>
-            <exclusion>
-                <groupId>xerces</groupId>
-                <artifactId>xercesImpl</artifactId>
-            </exclusion>
+          <exclusion>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+          </exclusion>
         </exclusions>
       </dependency>
       <dependency>
@@ -474,7 +474,7 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
           </exclusion>
-        </exclusions>        
+        </exclusions>
       </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
@@ -490,8 +490,8 @@
             <artifactId>aalto-xml</artifactId>
           </exclusion>
           <exclusion>
-              <groupId>org.jboss.logging</groupId>
-              <artifactId>jboss-logging</artifactId>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -505,22 +505,22 @@
         <artifactId>odata-client-core</artifactId>
         <version>${olingo.version}</version>
         <exclusions>
-            <exclusion>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-annotations</artifactId>
-            </exclusion>
-            <exclusion>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-core</artifactId>
-            </exclusion>
-            <exclusion>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-            </exclusion>            
-            <exclusion>
-                <groupId>com.fasterxml.jackson.dataformat</groupId>
-                <artifactId>jackson-dataformat-xml</artifactId>
-            </exclusion>                          
+          <exclusion>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+          </exclusion>
         </exclusions>
       </dependency>
       <dependency>
@@ -561,7 +561,7 @@
         <groupId>org.teiid.connectors</groupId>
         <artifactId>translator-infinispan-hotrod</artifactId>
         <version>${teiid.version}</version>
-      </dependency>  
+      </dependency>
       <dependency>
         <groupId>org.teiid.connectors</groupId>
         <artifactId>infinispan-api</artifactId>
@@ -616,7 +616,7 @@
         <version>${hibernate.version}</version>
         <exclusions>
           <exclusion>
-                <!-- Other JARS bring in this dependency -->
+            <!-- Other JARS bring in this dependency -->
             <groupId>org.jboss.spec.javax.transaction</groupId>
             <artifactId>jboss-transaction-api_1.2_spec</artifactId>
           </exclusion>
@@ -627,7 +627,7 @@
           <exclusion>
             <groupId>com.sun.activation</groupId>
             <artifactId>jakarta.activation</artifactId>
-          </exclusion>          
+          </exclusion>
           <exclusion>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
@@ -686,10 +686,10 @@
         <artifactId>keycloak-spring-boot-starter</artifactId>
         <version>${version.org.keycloak}</version>
         <exclusions>
-            <exclusion>
-                <groupId>org.jboss.logging</groupId>
-                <artifactId>jboss-logging</artifactId>
-            </exclusion>
+          <exclusion>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging</artifactId>
+          </exclusion>
         </exclusions>
       </dependency>
       <dependency>
@@ -738,7 +738,7 @@
         <groupId>org.teiid</groupId>
         <artifactId>vdb-plugin</artifactId>
         <version>${project.version}</version>
-      </dependency>      
+      </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-keycloak</artifactId>
@@ -748,7 +748,7 @@
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-file</artifactId>
         <version>${project.version}</version>
-      </dependency>      
+      </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-rest</artifactId>
@@ -768,7 +768,7 @@
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-sap-gateway</artifactId>
         <version>${project.version}</version>
-      </dependency>      
+      </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-soap</artifactId>
@@ -778,7 +778,7 @@
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-ftp</artifactId>
         <version>${project.version}</version>
-      </dependency>      
+      </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-mongodb</artifactId>
@@ -803,7 +803,7 @@
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-infinispan-hotrod</artifactId>
         <version>${project.version}</version>
-      </dependency>   
+      </dependency>
       <dependency>
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-openapi</artifactId>
@@ -988,7 +988,7 @@
         <groupId>org.teiid</groupId>
         <artifactId>spring-data-util</artifactId>
         <version>${project.version}</version>
-      </dependency>             
+      </dependency>
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-all</artifactId>
@@ -996,29 +996,29 @@
         <scope>test</scope>
       </dependency>
       <dependency>
-          <groupId>net.sourceforge.jtds</groupId>
-          <artifactId>jtds</artifactId>
-          <version>${version.net.sourceforge.jtds}</version>
+        <groupId>net.sourceforge.jtds</groupId>
+        <artifactId>jtds</artifactId>
+        <version>${version.net.sourceforge.jtds}</version>
       </dependency>
       <dependency>
-          <groupId>com.microsoft.sqlserver</groupId>
-          <artifactId>mssql-jdbc</artifactId>
-          <version>${version.com.microsoft.sqlserver}</version>
-      </dependency>   
-    <dependency>
-      <groupId>org.postgresql</groupId>
-      <artifactId>postgresql</artifactId>
-      <version>${version.org.postgresql}</version>
-    </dependency>           
+        <groupId>com.microsoft.sqlserver</groupId>
+        <artifactId>mssql-jdbc</artifactId>
+        <version>${version.com.microsoft.sqlserver}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>${version.org.postgresql}</version>
+      </dependency>
 
-    <!-- Mongodb override -->
-    <dependency>
-      <groupId>org.mongodb</groupId>
-      <artifactId>mongo-java-driver</artifactId>
-      <version>${version.org.mongodb}</version>
-    </dependency>
-    <!-- mongodb Override -->
-    
+      <!-- Mongodb override -->
+      <dependency>
+        <groupId>org.mongodb</groupId>
+        <artifactId>mongo-java-driver</artifactId>
+        <version>${version.org.mongodb}</version>
+      </dependency>
+      <!-- mongodb Override -->
+
       <!-- this is to override the infinispan version from spring-bom above, when matches with version remove -->
       <dependency>
         <groupId>com.github.ben-manes.caffeine</groupId>
@@ -1026,54 +1026,54 @@
         <version>2.8.0</version>
       </dependency>
       <dependency>
-          <groupId>org.infinispan</groupId>
-          <artifactId>infinispan-commons</artifactId>
-          <version>10.0.1.Final</version>
+        <groupId>org.infinispan</groupId>
+        <artifactId>infinispan-commons</artifactId>
+        <version>10.0.1.Final</version>
       </dependency>
       <dependency>
-          <groupId>org.infinispan</groupId>
-          <artifactId>infinispan-client-hotrod</artifactId>
-          <exclusions>
-            <exclusion>
-                <groupId>org.jboss.spec.javax.transaction</groupId>
-                <artifactId>jboss-transaction-api_1.2_spec</artifactId>
-            </exclusion>
-          </exclusions>
-          <version>10.0.1.Final</version>
-      </dependency>      
-      <dependency>
-          <groupId>org.infinispan</groupId>
-          <artifactId>infinispan-remote-query-client</artifactId>
-          <version>10.0.1.Final</version>
+        <groupId>org.infinispan</groupId>
+        <artifactId>infinispan-client-hotrod</artifactId>
+        <exclusions>
+          <exclusion>
+            <groupId>org.jboss.spec.javax.transaction</groupId>
+            <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+          </exclusion>
+        </exclusions>
+        <version>10.0.1.Final</version>
       </dependency>
       <dependency>
-          <groupId>org.infinispan</groupId>
-          <artifactId>infinispan-query-dsl</artifactId>
-          <version>10.0.1.Final</version>
-      </dependency>      
-      <dependency>
-          <groupId>org.infinispan</groupId>
-          <artifactId>infinispan-tasks-api</artifactId>
-          <version>10.0.1.Final</version>
-      </dependency>  
-      <dependency>
-          <groupId>org.infinispan</groupId>
-          <artifactId>infinispan-core</artifactId>
-          <exclusions>
-            <exclusion>
-                <groupId>org.jboss.spec.javax.transaction</groupId>
-                <artifactId>jboss-transaction-api_1.2_spec</artifactId>
-            </exclusion>
-          </exclusions>          
-          <version>10.0.1.Final</version>
+        <groupId>org.infinispan</groupId>
+        <artifactId>infinispan-remote-query-client</artifactId>
+        <version>10.0.1.Final</version>
       </dependency>
       <dependency>
-          <groupId>org.infinispan</groupId>
-          <artifactId>infinispan-tasks</artifactId>
-          <version>10.0.1.Final</version>
-      </dependency>      
+        <groupId>org.infinispan</groupId>
+        <artifactId>infinispan-query-dsl</artifactId>
+        <version>10.0.1.Final</version>
+      </dependency>
+      <dependency>
+        <groupId>org.infinispan</groupId>
+        <artifactId>infinispan-tasks-api</artifactId>
+        <version>10.0.1.Final</version>
+      </dependency>
+      <dependency>
+        <groupId>org.infinispan</groupId>
+        <artifactId>infinispan-core</artifactId>
+        <exclusions>
+          <exclusion>
+            <groupId>org.jboss.spec.javax.transaction</groupId>
+            <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+          </exclusion>
+        </exclusions>
+        <version>10.0.1.Final</version>
+      </dependency>
+      <dependency>
+        <groupId>org.infinispan</groupId>
+        <artifactId>infinispan-tasks</artifactId>
+        <version>10.0.1.Final</version>
+      </dependency>
       <!-- this is to override the infinispan version from spring-bom above, when matches with version remove -->
-            
+
       <!-- DEPENDENCY RESOLUTION SUGGESTED OVERRIDES, OVERRIDES SPRING BOOT'S, ONLY EDIT WHEN SB UPGRADES -->
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
@@ -1089,12 +1089,12 @@
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-annotations</artifactId>
         <version>${version.jackson-core}</version>
-      </dependency>      
+      </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.dataformat</groupId>
         <artifactId>jackson-dataformat-xml</artifactId>
         <version>${version.jackson-core}</version>
-      </dependency> 
+      </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.dataformat</groupId>
         <artifactId>jackson-dataformat-yaml</artifactId>
@@ -1104,7 +1104,7 @@
         <groupId>com.fasterxml.jackson.datatype</groupId>
         <artifactId>jackson-datatype-joda</artifactId>
         <version>${version.jackson-core}</version>
-      </dependency>                  
+      </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.module</groupId>
         <artifactId>jackson-module-jaxb-annotations</artifactId>
@@ -1116,9 +1116,9 @@
         <version>6.2.1</version>
       </dependency>
       <dependency>
-          <groupId>org.codehaus.woodstox</groupId>
-          <artifactId>stax2-api</artifactId>
-          <version>4.2.1</version>
+        <groupId>org.codehaus.woodstox</groupId>
+        <artifactId>stax2-api</artifactId>
+        <version>4.2.1</version>
       </dependency>
       <dependency>
         <groupId>org.jboss.logging</groupId>
@@ -1139,46 +1139,46 @@
       <!-- DEPENDENCY RESOLUTION SUGGESTED OVERRIDES, OVERRIDES SPRING BOOT'S, ONLY EDIT WHEN SB UPGRADES -->
 
       <dependency>
-          <groupId>com.ingres.jdbc</groupId>
-          <artifactId>iijdbc</artifactId>
-          <version>${version.com.ingres.jdbc}</version>
+        <groupId>com.ingres.jdbc</groupId>
+        <artifactId>iijdbc</artifactId>
+        <version>${version.com.ingres.jdbc}</version>
+      </dependency>
+      <!--      <dependency>-->
+      <!--          <groupId>com.syncron.amazonaws</groupId>-->
+      <!--          <artifactId>simba-athena-jdbc-driver</artifactId>-->
+      <!--          <version>${version.com.syncron.amazonaws}</version>-->
+      <!--      </dependency>-->
+      <dependency>
+        <groupId>org.apache.derby</groupId>
+        <artifactId>derbyclient</artifactId>
+        <version>${version.org.apache.derby}</version>
       </dependency>
       <dependency>
-          <groupId>com.syncron.amazonaws</groupId>
-          <artifactId>simba-athena-jdbc-driver</artifactId>
-          <version>${version.com.syncron.amazonaws}</version>
+        <groupId>com.exasol</groupId>
+        <artifactId>exasol-jdbc</artifactId>
+        <version>${version.com.exasol}</version>
       </dependency>
       <dependency>
-          <groupId>org.apache.derby</groupId>
-          <artifactId>derbyclient</artifactId>
-          <version>${version.org.apache.derby}</version>
+        <groupId>com.sap.cloud.db.jdbc</groupId>
+        <artifactId>ngdbc</artifactId>
+        <version>${version.com.sap.cloud.db.jdbc}</version>
       </dependency>
       <dependency>
-          <groupId>com.exasol</groupId>
-          <artifactId>exasol-jdbc</artifactId>
-          <version>${version.com.exasol}</version>
+        <groupId>com.cloudera.impala</groupId>
+        <artifactId>jdbc</artifactId>
+        <version>${version.com.cloudera.impala}</version>
       </dependency>
       <dependency>
-          <groupId>com.sap.cloud.db.jdbc</groupId>
-          <artifactId>ngdbc</artifactId>
-          <version>${version.com.sap.cloud.db.jdbc}</version>
+        <groupId>com.ibm.informix</groupId>
+        <artifactId>jdbc</artifactId>
+        <version>${version.com.ibm.informix}</version>
       </dependency>
       <dependency>
-          <groupId>com.cloudera.impala</groupId>
-          <artifactId>jdbc</artifactId>
-          <version>${version.com.cloudera.impala}</version>
+        <groupId>com.facebook.presto</groupId>
+        <artifactId>presto-jdbc</artifactId>
+        <version>${version.com.facebook.presto}</version>
       </dependency>
       <dependency>
-          <groupId>com.ibm.informix</groupId>
-          <artifactId>jdbc</artifactId>
-          <version>${version.com.ibm.informix}</version>
-      </dependency>
-    <dependency>
-      <groupId>com.facebook.presto</groupId>
-      <artifactId>presto-jdbc</artifactId>
-      <version>${version.com.facebook.presto}</version>
-    </dependency>
-    <dependency>
         <groupId>net.sf.ucanaccess</groupId>
         <artifactId>ucanaccess</artifactId>
         <version>${version.net.sf.ucanaccess}</version>
@@ -1188,8 +1188,8 @@
             <artifactId>commons-logging </artifactId>
           </exclusion>
         </exclusions>
-    </dependency>
-    <dependency>
+      </dependency>
+      <dependency>
         <groupId>org.apache.phoenix</groupId>
         <artifactId>phoenix-queryserver-client</artifactId>
         <version>${version.org.apache.phoenix}</version>
@@ -1223,25 +1223,25 @@
             <artifactId>jdk.tools</artifactId>
           </exclusion>
         </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.hive</groupId>
-      <artifactId>hive-jdbc</artifactId>
-      <version>${version.org.apache.hive}</version>
-      <classifier>standalone</classifier>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>io.opentracing.contrib</groupId>
-      <artifactId>opentracing-spring-jaeger-web-starter</artifactId>
-      <version>${version.io.opentracing.contrib}</version>
-    </dependency>
-    
+      </dependency>
+      <dependency>
+        <groupId>org.apache.hive</groupId>
+        <artifactId>hive-jdbc</artifactId>
+        <version>${version.org.apache.hive}</version>
+        <classifier>standalone</classifier>
+        <exclusions>
+          <exclusion>
+            <groupId>*</groupId>
+            <artifactId>*</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>io.opentracing.contrib</groupId>
+        <artifactId>opentracing-spring-jaeger-web-starter</artifactId>
+        <version>${version.io.opentracing.contrib}</version>
+      </dependency>
+
     </dependencies>
 
   </dependencyManagement>
@@ -1252,8 +1252,8 @@
       <name>Maven Central</name>
       <url>https://repo.maven.apache.org/maven2/</url>
       <snapshots>
-          <enabled>false</enabled>
-          <updatePolicy>never</updatePolicy>
+        <enabled>false</enabled>
+        <updatePolicy>never</updatePolicy>
       </snapshots>
     </repository>
     <repository>
@@ -1311,7 +1311,7 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <modules>
-        <module>common</module>       
+        <module>common</module>
         <module>starter</module>
         <module>starter-test</module>
         <module>data</module>
@@ -1327,7 +1327,7 @@
         <basepom.check.skip-javadoc>false</basepom.check.skip-javadoc>
       </properties>
       <modules>
-        <module>common</module>        
+        <module>common</module>
         <module>starter</module>
         <module>data</module>
         <module>tools</module>
@@ -1385,6 +1385,18 @@
                 <version>1.9.5</version>
               </dependency>
             </dependencies>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-release-plugin</artifactId>
+            <version>2.2.2</version>
+            <configuration>
+              <checkModificationExcludes>
+                <checkModificationExclude>pom.xml</checkModificationExclude>
+                <checkModificationExclude>samples/athena/lib/AthenaJDBC42.jar</checkModificationExclude>
+                <checkModificationExclude>samples/athena/pom.xml</checkModificationExclude>
+              </checkModificationExcludes>
+            </configuration>
           </plugin>
         </plugins>
       </build>

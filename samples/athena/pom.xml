@@ -36,10 +36,10 @@
 			<groupId>org.teiid</groupId>
 			<artifactId>teiid-spring-boot-starter</artifactId>
 		</dependency>
-        <dependency>
-            <groupId>com.syncron.amazonaws</groupId>
-            <artifactId>simba-athena-jdbc-driver</artifactId>
-        </dependency>
+		<!--        <dependency>-->
+		<!--            <groupId>com.syncron.amazonaws</groupId>-->
+		<!--            <artifactId>simba-athena-jdbc-driver</artifactId>-->
+		<!--        </dependency>-->
 	</dependencies>
 
 	<build>
@@ -55,8 +55,27 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<inherited>false</inherited>
+				<executions>
+					<execution>
+						<id>package</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<groupId>com.syncron.amazonaws</groupId>
+							<artifactId>simba-athena-jdbc-driver</artifactId>
+							<version>2.0.2</version>
+							<packaging>jar</packaging>
+							<file>${basedir}/lib/AthenaJDBC42.jar</file>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
