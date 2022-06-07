@@ -131,7 +131,6 @@ public class TeiidAutoConfiguration {
     }
 
     @Bean(name="dataSource")
-    @Primary
     @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource getDataSource(TeiidServer server, VDBMetaData vdb) {
         EmbeddedDatabaseFactory edf = new EmbeddedDatabaseFactory();
