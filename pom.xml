@@ -142,7 +142,6 @@
     <version.com.cloudera.impala>2.5.31</version.com.cloudera.impala>
     <version.com.sap.cloud.db.jdbc>2.4.76</version.com.sap.cloud.db.jdbc>
     <version.org.apache.derby>10.15.2.0</version.org.apache.derby>
-    <version.com.syncron.amazonaws>2.0.2</version.com.syncron.amazonaws>
     <version.com.exasol>6.2.5</version.com.exasol>
     <version.com.ingres.jdbc>10.2-4.1.10</version.com.ingres.jdbc>
     <version.org.apache.phoenix>4.14.3-HBase-1.4</version.org.apache.phoenix>
@@ -1141,11 +1140,6 @@
           <groupId>com.ingres.jdbc</groupId>
           <artifactId>iijdbc</artifactId>
           <version>${version.com.ingres.jdbc}</version>
-      </dependency>
-      <dependency>
-          <groupId>com.syncron.amazonaws</groupId>
-          <artifactId>simba-athena-jdbc-driver</artifactId>
-          <version>${version.com.syncron.amazonaws}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.derby</groupId>
